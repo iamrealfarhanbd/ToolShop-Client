@@ -9,6 +9,7 @@ const Order = () => {
     const navigate = useNavigate();
     const { orderID } = useParams();
     const [orderItem, setOrderItem] = useState({});
+    const [quantityError, setQuantityError] = useState('');
 
     useEffect(() => {
         const url = `http://localhost:5000/tool/${orderID}`;
@@ -20,20 +21,30 @@ const Order = () => {
     }, [orderID]);
     console.log(orderItem)
     const [user, loading, error] = useAuthState(auth);
+    
     const handleOrder = event => {
         event.preventDefault();
-        const slot = event.target.slot.value;
-
+     
+          
+          console.log(event.target.quantity.value , orderItem.quantity)
         const order = {
             orderId: orderItem._id,
             productname: orderItem.productname,
             useremail: user.email,
             username: user.displayName,
-            quantity: orderItem.quantity,
+            quantity: event.target.quantity.value,
             price: orderItem.price,
             phone: event.target.phone.value
         }
-
+       
+        if(20 >  parseInt(event.target.quantity.value)   ){
+            console.log(event.target.quantity.value , orderItem.quantity)
+          return setQuantityError(`We Cant Provide This quantity`)
+          }
+          if( parseInt( orderItem.quantity)  < parseInt(event.target.quantity.value) ){
+            return setQuantityError(`We Cant Provide more then ${orderItem.quantity} quantity`)
+          }
+          setQuantityError('');
         fetch('http://localhost:5000/order', {
             method: 'POST',
             headers: {
@@ -59,8 +70,9 @@ const Order = () => {
 
                     <div className="card-body">
                         <form onSubmit={handleOrder} className='grid grid-cols-1 gap-3 justify-items-center mt-2'>
-                            <input type="text" placeholder="Type here" value={orderItem.productname} class="input input-bordered input-success w-full max-w-xs" />
-                            <input type="text" placeholder="Type here" value={orderItem.quantity} class="input input-bordered input-success w-full max-w-xs" />
+                            <input type="text" placeholder="Type here" value={orderItem.productname}   class="input input-bordered input-success w-full max-w-xs" />
+                            <input type="number" name="quantity"   placeholder="Type here" class="input input-bordered input-success w-full max-w-xs" />
+                            <p className='text-left font-extrabold text-red-600'>{quantityError}</p>
                             <input type="text" placeholder="Type here" value={orderItem.price} class="input input-bordered input-success w-full max-w-xs" />
                             <input type="text" placeholder="Type here" disabled value={user?.displayName || ''} class="input input-bordered input-success w-full max-w-xs" />
                             <input type="text" placeholder="Type here" disabled value={user?.email || ''} class="input input-bordered input-success w-full max-w-xs" />
@@ -73,7 +85,7 @@ const Order = () => {
                 <div>
                     <figure><img src={orderItem.img} alt="Shoes" className='w-80' /></figure>
                     <h1 className="text-5xl font-bold">{orderItem.productname}</h1>
-                    <p className="py-6">{orderItem.description}</p>
+                    <p className="py-6">{orderItem.quantity}</p>
                 </div>
             </div>
         </div>

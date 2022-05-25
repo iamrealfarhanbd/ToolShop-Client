@@ -17,6 +17,7 @@ import MyOrder from './components/Dashboard/MyOrder';
 import RequireAdmin from './components/RequireAuth/RequireAdmin';
 import RequireAuth from './components/RequireAuth/RequireAuth';
 import Payment from './components/Dashboard/Payment';
+import MyProfile from './components/Dashboard/MyProfile';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/order/:orderID" element={<Order />} />
         <Route path="dashboard" element={<RequireAuth> <Dashboard /> </RequireAuth>} >
+          <Route  path="MyProfile" element={<MyProfile></MyProfile>}></Route>
           <Route index element={ <MyOrder></MyOrder>}></Route>
           <Route  path="myReview" element={<MyReview></MyReview>}></Route>
           <Route path="payment/:id" element={<Payment></Payment>}></Route>
