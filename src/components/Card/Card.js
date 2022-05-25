@@ -11,13 +11,12 @@ const Card = ({tool}) => {
                 <figure className="px-10 pt-10">
                     <img src={img} alt="Shoes" className="rounded-xl" />
                 </figure>
-                <div className="card-body items-center text-center">
-                    <h2 className="card-title">{productname}</h2>
-                    <p><b>{providername}</b></p>
-                    <p>{description}</p>
-                    <p>{quantity}</p>
-                    <p>{price}</p>
-                    <div className="card-actions">
+                <div className="card-body items-left text-left">
+                    <h2 className="card-title">Tool Name: {productname}</h2>
+                    <p>About Tool: {description}</p>
+                    <p>Stock: {quantity}</p>
+                    <p>Price {price}</p>
+                    <div className="card-actions ">
                         <button className="btn btn-primary" onClick={() => navigate(`/order/${_id}`)}>Buy Now</button>
                     </div>
                 </div>

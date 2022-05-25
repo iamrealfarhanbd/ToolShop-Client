@@ -73,7 +73,7 @@ const MyOrder = () => {
   
     return (
         <div>
-            <h2>My Appointments: {orders.length}</h2>
+            <h2>My Total Items: {orders.length}</h2>
             <div className="overflow-x-auto">
                 <table className="table w-full">
                     <thead>
@@ -97,8 +97,8 @@ const MyOrder = () => {
                                 <td>
                                     {(a.price && !a.paid) &&
                                         <>
-                                            <Link to={`/dashboard/payment/${a._id}`}><button className='btn btn-xs btn-success'>pay</button></Link>
-                                            <button className='btn btn-xs btn-success' onClick={() => handleDelete(a._id)}>Cancel</button>
+                                            <Link to={`/dashboard/payment/${a._id}`}><button className='btn btn-xs btn-primary mx-2'>pay</button></Link>
+                                            <button className='btn btn-xs btn-secondary' onClick={() => handleDelete(a._id)}>Cancel</button>
                                         </>
                                     }
                                     {(a.price && a.paid) && <div>
