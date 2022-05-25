@@ -18,6 +18,7 @@ import RequireAdmin from './components/RequireAuth/RequireAdmin';
 import RequireAuth from './components/RequireAuth/RequireAuth';
 import Payment from './components/Dashboard/Payment';
 import MyProfile from './components/Dashboard/MyProfile';
+import NotFound from './Shared/NotFound/NotFound';
 
 function App() {
   return (
@@ -31,14 +32,15 @@ function App() {
         <Route path="/order/:orderID" element={<Order />} />
         <Route path="dashboard" element={<RequireAuth> <Dashboard /> </RequireAuth>} >
           <Route  path="MyProfile" element={<MyProfile></MyProfile>}></Route>
-          <Route index element={ <MyOrder></MyOrder>}></Route>
-          <Route  path="myReview" element={<MyReview></MyReview>}></Route>
-          <Route path="payment/:id" element={<Payment></Payment>}></Route>
-          <Route path="users" element={<Users></Users>}></Route>
+          <Route index element={ <RequireAuth><MyOrder></MyOrder></RequireAuth>}></Route>
+          <Route  path="myReview" element={<RequireAuth><MyReview></MyReview></ RequireAuth>}></Route>
+          <Route path="payment/:id" element={<RequireAuth><Payment></Payment></RequireAuth>}></Route>
+          <Route path="users" element={<RequireAuth><Users></Users></RequireAuth>}></Route>
         </Route>
-        <Route path="/addtools" element={<AddTools />} />
+        <Route path="/addtools" element={<RequireAuth><AddTools /></RequireAuth>} />
         <Route path="/alltools/:toolId" element={<ToolsDeatils />} />
         <Route path="/RestPass" element={<RestPass />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </div>
