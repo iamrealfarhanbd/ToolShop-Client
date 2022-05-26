@@ -2,7 +2,7 @@ import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate,Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -61,8 +61,8 @@ const MyProfile = () => {
                         <h1 className="text-3xl font-bold">Name: {userones.name}</h1>
                             <p className="py-1">Email: {userones.email}</p>
                             {userones.education ? <p className="py-1">Education: {userones.education}</p>: ""}
-                            {userones.LinkedIn ? <p className="py-1">Social Icon:{userones.LinkedIn}</p>: ""}
-                            {userones.Facebook ? <p className="py-1">Social Icon: {userones.Facebook}</p>: ""}
+                            {userones.LinkedIn ? <p className="py-1">Social Icon:<Link to={"{userones.LinkedIn}"}>{userones.LinkedIn}</Link></p>: ""}
+                            {userones.Facebook ? <p className="py-1">Social Icon: <Link to={"{userones.Facebook}"}>{userones.Facebook}</Link></p>: ""}
                             {userones.Address ?  <p className="py-1">Address: {userones.Address}</p>: ""}
                             {userones.number ?   <p className="py-1">Number: {userones.number}</p>: ""}
                             <p className="py-1">{userones.role ? `Role: ${userones?.role}`:" "}</p>
