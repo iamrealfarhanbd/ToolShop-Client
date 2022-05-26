@@ -39,7 +39,7 @@ const MyProfile = () => {
             .then(res => res.json())
             .then(result => {
               
-                toast('Your review is Added!!!');
+                toast('Your info  is Added!!!');
                 reset();
             })
     };
@@ -81,7 +81,7 @@ const MyProfile = () => {
                                 <input className='input input-bordered input-primary w-full max-w-xs mb-2' placeholder='LinkedIn link' {...register("LinkedIn", {value:`${userones.LinkedIn ? userones.LinkedIn : ""}`})} />
                                 <input className='input input-bordered input-primary w-full max-w-xs mb-2' placeholder='Facebook link' {...register("Facebook", {value:`${userones.Facebook ? userones.Facebook : ""}`})} />
                                 <input type="number" className='input input-bordered input-primary w-full max-w-xs mb-2' placeholder='phone number' {...register("number",{value:`${userones.number ? userones.number : ""}`})} />
-                                <input type="submit" className="btn" value="Add Review" />
+                                <input type="submit" className="btn" value="Add Info" />
                             </form>
                         </div>
                     </div>
