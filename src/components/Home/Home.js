@@ -1,6 +1,6 @@
 
 import React from 'react';
-import chair from '../../assets/images/chair.png';
+import chair from '../../assets/images/Farhan.jpg';
 import useAllTools from '../../hooks/useAlltools';
 import useReview from '../../hooks/useReview';
 import Loading from '../../Shared/Loading';

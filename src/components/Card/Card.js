@@ -15,7 +15,7 @@ const Card = ({tool}) => {
                     <h2 className="card-title">Tool Name: {productname}</h2>
                     <p>About Tool: {description}</p>
                     <p>Stock: {quantity}</p>
-                    <p>Price {price}</p>
+                    <p className='text-1xl font-bold '>Per Unit Price {price}</p>
                     <div className="card-actions ">
                         <button className="btn btn-primary" onClick={() => navigate(`/order/${_id}`)}>Buy Now</button>
                     </div>

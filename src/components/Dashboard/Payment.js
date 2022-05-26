@@ -13,7 +13,7 @@ const Payment = () => {
     const url = `http://localhost:5000/order/${id}`;
 
     const { data: order, isLoading } = useQuery(['order', id], () => fetch(url, {
-     
+
         method: 'GET',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -25,24 +25,24 @@ const Payment = () => {
     }
 
     return (
-        <div>
-            <h2>Hello</h2>
-            <p className="text-success font-bold">Hello, {id}</p>
-            <div className="card w-50 max-w-md bg-base-100 shadow-xl my-12">
+        <div className='form-control w-full items-center max-w-full m-auto my-10'>
+        <h2 className='text-2xl font-bold text-green-500'>This is your payment dashboard</h2>
+
+            <div className="card w-50 max-w-md  bg-base-100 shadow-xl my-12">
                 <div className="card-body">
                     <p className="text-success font-bold">Hello, {order.username}</p>
+                    <p className="card-title">Order ID: <span className='text-orange-700'> {order._id}</span></p>
                     <h2 className="card-title">Please Pay for {order.productname}</h2>
-                    <p>Your Appointment: <span className='text-orange-700'>{order.date}</span> at {order.slot}</p>
-                    <p>Please pay: ${order.price}</p>
+                    <h2 className="card-title">Quantity: {order.quantity}</h2>
+                    <p className="card-title">Please pay: <span className='text-green-400'> ${order.price}</span></p>
                 </div>
-            </div>
-            <div className="card flex-shrink-0 w-50 max-w-md shadow-2xl bg-base-100">
-                <div className="card-body">
+                <div className="card-body bg-sky-900">
                     <Elements stripe={stripePromise}>
                         <CheckoutForm order={order} />
                     </Elements>
                 </div>
             </div>
+
         </div>
     );
 };
