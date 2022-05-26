@@ -15,12 +15,12 @@ const AllOrders = () => {
         })
             .then(res => {
                 if(res.status === 403){
-                    toast.error('Failed to Make an admin');
+                    toast.error('Failed to  shipped');
                 }
                 return res.json()})
             .then(data => {
                 if (data.modifiedCount > 0) {
-                    toast.success(`Successfully made an admin`);
+                    toast.success(`Successfully shipped`);
                 }
 
             })
@@ -52,7 +52,7 @@ const AllOrders = () => {
                     })
                 Swal.fire(
                     'Deleted!',
-                    'Your file has been deleted.',
+                    'Your order has been deleted.',
                     'success'
                 )
             }

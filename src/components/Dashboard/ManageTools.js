@@ -28,7 +28,7 @@ const ManageTools = () => {
                     })
                 Swal.fire(
                     'Deleted!',
-                    'Your file has been deleted.',
+                    'Your tool has been deleted.',
                     'success'
                 )
             }

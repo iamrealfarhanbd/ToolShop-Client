@@ -36,7 +36,7 @@ const MyOrder = () => {
                     })
                 Swal.fire(
                     'Deleted!',
-                    'Your file has been deleted.',
+                    'Your order has been deleted.',
                     'success'
                 )
             }
