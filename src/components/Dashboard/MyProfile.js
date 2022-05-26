@@ -60,12 +60,11 @@ const MyProfile = () => {
                         <div className="card card-body  w-96 shadow-2xl bg-base-100">
                         <h1 className="text-3xl font-bold">Name: {userones.name}</h1>
                             <p className="py-1">Email: {userones.email}</p>
-                            <p className="py-1">Education: {userones.education}</p>
-                            <p className="py-1">Social Icon:{userones.LinkedIn}
-                            
-                            </p>
-                            <p className="py-1">Address: {userones.Address}</p>
-                            <p className="py-1">Number: {userones.number}</p>
+                            {userones.education ? <p className="py-1">Education: {userones.education}</p>: ""}
+                            {userones.LinkedIn ? <p className="py-1">Social Icon:{userones.LinkedIn}</p>: ""}
+                            {userones.Facebook ? <p className="py-1">Social Icon: {userones.Facebook}</p>: ""}
+                            {userones.Address ?  <p className="py-1">Address: {userones.Address}</p>: ""}
+                            {userones.number ?   <p className="py-1">Number: {userones.number}</p>: ""}
                             <p className="py-1">{userones.role ? `Role: ${userones?.role}`:" "}</p>
                          
                           
