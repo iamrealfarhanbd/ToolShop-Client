@@ -35,7 +35,7 @@ function App() {
         <Route path="/Portfolio" element={<Portfolio />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/order/:orderID" element={<Order />} />
+        <Route path="/order/:orderID" element={<RequireAuth><Order /></RequireAuth>} />
 
         <Route path="dashboard" element={<RequireAuth> <Dashboard /> </RequireAuth>} >
 
@@ -51,7 +51,6 @@ function App() {
 
         </Route>
 
-        <Route path="/alltools/:toolId" element={<ToolsDeatils />} />
         <Route path="/RestPass" element={<RestPass />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
