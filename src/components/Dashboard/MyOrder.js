@@ -80,7 +80,7 @@ const MyOrder = () => {
                         <tr>
                             <th></th>
                             <th>product name</th>
-                            <th>User name</th>
+                            <th>user name</th>
                             <th>quantity</th>
                             <th>price</th>
                             <th>Action</th>

@@ -15,7 +15,7 @@ const AllOrders = () => {
         })
             .then(res => {
                 if(res.status === 403){
-                    toast.error('Failed to  shipped');
+                    toast.error('Failed to shipped');
                 }
                 return res.json()})
             .then(data => {

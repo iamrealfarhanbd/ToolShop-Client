@@ -38,8 +38,8 @@ const Portfolio = () => {
                         <ul className=' grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 p-4'>
                             <li className='btn bg-sky-600 text-sky-100'><Link to={'https://www.apexlearning.org.uk/'}>apexlearning</Link></li>
                             <li className='btn bg-sky-600 text-sky-100'><Link to={'https://www.idesignacademy.net/'}> idesignacademy</Link></li>
-                            <li className='btn bg-sky-600 text-sky-100'><Link to={' https://www.photographyacademy.net/'}>photographyacademy </Link></li>
-                            <li className='btn bg-sky-600 text-sky-100'><Link to={' https://www.ipublicspeaking.net/'}> ipublicspeaking</Link></li>
+                            <li className='btn bg-sky-600 text-sky-100'><Link to={'https://www.photographyacademy.net/'}>photographyacademy </Link></li>
+                            <li className='btn bg-sky-600 text-sky-100'><Link to={'https://www.ipublicspeaking.net/'}> ipublicspeaking</Link></li>
                             <li className='btn bg-sky-600 text-sky-100'><Link to={'https://www.theyogatraining.net'}>theyogatraining </Link></li>
                             <li className='btn bg-sky-600 text-sky-100'><Link to={'https://www.theyogatraining.net/'}>theyogatraining</Link> </li>
                             <li className='btn bg-sky-600 text-sky-100'><Link to={'https://thecareerpath.net/'}>thecareerpath</Link></li>

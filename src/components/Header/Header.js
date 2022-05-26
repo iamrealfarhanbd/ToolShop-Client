@@ -18,6 +18,7 @@ const Header = () => {
     const menuItems = <>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/blog">Blog</Link></li>
+        <li><Link to="/AllTools">All Tools</Link></li>
         <li><Link to="/Portfolio">Portfolio</Link></li>
         {
             user && <>

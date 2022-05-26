@@ -23,6 +23,7 @@ import AllOrders from './components/Dashboard/AllOrders';
 import ManageTools from './components/Dashboard/ManageTools';
 import Portfolio from './components/Porfolio/Portfolio';
 import Blog from './components/Blog/Blog';
+import AllTools from './components/AllTools/AllTools';
 
 function App() {
   return (
@@ -52,6 +53,7 @@ function App() {
         </Route>
 
         <Route path="/RestPass" element={<RestPass />} />
+        <Route path="/AllTools" element={<AllTools />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
