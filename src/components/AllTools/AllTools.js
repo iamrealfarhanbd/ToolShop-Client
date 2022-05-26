@@ -32,7 +32,7 @@ const AllTools = ({ review }) => {
       <h1 className="text-5xl font-bold">All Tools!</h1>
       <div className='grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center'>
         {
-          tools.length ? tools.slice(0, 6).map(tool => <Card key={tool._id} tool={tool} />) : <Loading />
+          tools.length ? tools.map(tool => <Card key={tool._id} tool={tool} />) : <Loading />
         }
       </div>
 
