@@ -15,7 +15,7 @@ const ManageTools = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/tool/${id}`, {
+                fetch(`https://toolshop-server.herokuapp.com/tool/${id}`, {
                     method: 'DELETE',
                     headers: {
                         authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -37,7 +37,7 @@ const ManageTools = () => {
     }
 
     useEffect(()=>{
-        fetch('http://localhost:5000/tool')
+        fetch('https://toolshop-server.herokuapp.com/tool')
         .then(res=> res.json())
         .then(tool=>setTools(tool))
     },[tools])
@@ -50,7 +50,6 @@ const ManageTools = () => {
                     <tr>
                         <th></th>
                         <th>product name</th>
-                        <th>provider name</th>
                         <th>quantity</th>
                         <th>price</th>
                         <th>Action</th>
@@ -61,7 +60,6 @@ const ManageTools = () => {
                         tools.map((a, index) => <tr key={a._id}>
                             <th>{index + 1}</th>
                             <td>{a.productname}</td>
-                            <td>{a.description}</td>
                             <td>{a.quantity}</td>
                             <td>{a.price}</td>
                             <td><button className='btn btn-xs btn-secondary' onClick={() => handleDelete(a._id)}>Delete</button></td>

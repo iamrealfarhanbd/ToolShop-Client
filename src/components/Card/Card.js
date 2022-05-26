@@ -7,7 +7,7 @@ const Card = ({tool}) => {
 
     return (
         <>
-            <div className="card w-96 bg-base-100 shadow-xl">
+            <div className="card lg:w-96 w-80 bg-base-100 shadow-xl">
                 <figure className="px-10 pt-10">
                     <img src={img} alt="Shoes" className="rounded-xl" />
                 </figure>

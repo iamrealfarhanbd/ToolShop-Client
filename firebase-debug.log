@@ -1,0 +1,43 @@
+[debug] [2022-05-26T09:38:55.995Z] ----------------------------------------------------------------------
+[debug] [2022-05-26T09:38:55.997Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\iamfa\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-05-26T09:38:55.998Z] CLI Version:   11.0.1
+[debug] [2022-05-26T09:38:55.998Z] Platform:      win32
+[debug] [2022-05-26T09:38:55.998Z] Node Version:  v17.7.2
+[debug] [2022-05-26T09:38:56.000Z] Time:          Thu May 26 2022 15:38:55 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-05-26T09:38:56.000Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-05-26T09:38:56.081Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-05-26T09:38:56.082Z] > authorizing via signed-in user (iamfarhan09@gmail.com)
+[debug] [2022-05-26T09:38:56.082Z] [iam] checking project toolshop-e1c31 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-05-26T09:38:56.087Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/toolshop-e1c31:testIamPermissions [none]
+[debug] [2022-05-26T09:38:56.087Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/toolshop-e1c31:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-05-26T09:38:57.605Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/toolshop-e1c31:testIamPermissions 200
+[debug] [2022-05-26T09:38:57.605Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/toolshop-e1c31:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-05-26T09:38:57.607Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/toolshop-e1c31 [none]
+[debug] [2022-05-26T09:38:58.047Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/toolshop-e1c31 200
+[debug] [2022-05-26T09:38:58.047Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/toolshop-e1c31 {"projectId":"toolshop-e1c31","projectNumber":"768504596886","displayName":"toolShop","name":"projects/toolshop-e1c31","resources":{"hostingSite":"toolshop-e1c31"},"state":"DELETED"}
+[info] 
+[info] === Deploying to 'toolshop-e1c31'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2022-05-26T09:38:58.053Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/toolshop-e1c31 [none]
+[debug] [2022-05-26T09:38:58.490Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/toolshop-e1c31 200
+[debug] [2022-05-26T09:38:58.491Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/toolshop-e1c31 {"projectId":"toolshop-e1c31","projectNumber":"768504596886","displayName":"toolShop","name":"projects/toolshop-e1c31","resources":{"hostingSite":"toolshop-e1c31"},"state":"DELETED"}
+[debug] [2022-05-26T09:38:58.493Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/768504596886/sites/toolshop-e1c31/versions [none]
+[debug] [2022-05-26T09:38:58.493Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/768504596886/sites/toolshop-e1c31/versions {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2022-05-26T09:39:00.039Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/768504596886/sites/toolshop-e1c31/versions 500
+[debug] [2022-05-26T09:39:00.039Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/768504596886/sites/toolshop-e1c31/versions {"error":{"code":500,"message":"Internal error encountered.","status":"INTERNAL"}}
+[error] 
+[error] Error: HTTP Error: 500, Internal error encountered.
+[debug] [2022-05-26T09:39:00.247Z] Error Context: {
+  "body": {
+    "error": {
+      "code": 500,
+      "message": "Internal error encountered.",
+      "status": "INTERNAL"
+    }
+  },
+  "response": {
+    "statusCode": 500
+  }
+}

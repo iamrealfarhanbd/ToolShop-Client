@@ -14,7 +14,7 @@ const AddReview = () => {
 
     const onSubmit = data => {
         console.log(data);
-        const url = `http://localhost:5000/review`;
+        const url = `https://toolshop-server.herokuapp.com/review`;
         fetch(url, {
             method: 'POST',
             headers: {
@@ -39,7 +39,7 @@ const AddReview = () => {
                     <input className='input input-bordered input-primary w-full max-w-xs mb-2' placeholder='Photo URL' type="text" {...register("img")} />
                     <input className='input input-bordered input-primary w-full max-w-xs mb-2' placeholder='YourName' {...register("name", { required: true, maxLength: 20 })} />
                     <input type="number"min="0" max="5" className='input input-bordered input-primary w-full max-w-xs mb-2' placeholder='yourrating' {...register("rating", { required: true, maxLength: 20 })} />
-                    <textarea className='input input-bordered input-primary w-full max-w-xs mb-2' placeholder='YourReview' {...register("Review")} />
+                    <textarea className='input input-bordered input-primary w-full max-w-xs mb-2' placeholder='YourReview' {...register("Review" , { required: true, maxLength: 100 })} />
                     <input type="submit" className="btn" value="Add Review" />
                 </form>
             </div>

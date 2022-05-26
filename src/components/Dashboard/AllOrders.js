@@ -7,7 +7,7 @@ const AllOrders = () => {
     const [orders , setOrders] = useState([])
 
     const handleOrder = (id) => {
-        fetch(`http://localhost:5000/order/${id}`, {
+        fetch(`https://toolshop-server.herokuapp.com/order/${id}`, {
             method: 'PATCH',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -39,7 +39,7 @@ const AllOrders = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/order/${id}`, {
+                fetch(`https://toolshop-server.herokuapp.com/order/${id}`, {
                     method: 'DELETE',
                     headers: {
                         authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -61,7 +61,7 @@ const AllOrders = () => {
     }
 
     useEffect(()=>{
-        fetch('http://localhost:5000/orders')
+        fetch('https://toolshop-server.herokuapp.com/orders')
         .then(res=> res.json())
         .then(order=>setOrders(order))
     },[orders])
@@ -74,7 +74,6 @@ const AllOrders = () => {
                     <tr>
                         <th></th>
                         <th>product name</th>
-                        <th>provider name</th>
                         <th>quantity</th>
                         <th>price</th>
                         <th>Action</th>
@@ -85,7 +84,6 @@ const AllOrders = () => {
                         orders.map((a, index) => <tr key={a._id}>
                             <th>{index + 1}</th>
                             <td>{a.productname}</td>
-                            <td>{a.useremail}</td>
                             <td>{a.quantity}</td>
                             <td>{a.price}</td>
                             <td>
