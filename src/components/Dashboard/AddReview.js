@@ -14,7 +14,7 @@ const AddReview = () => {
 
     const onSubmit = data => {
         console.log(data);
-        const url = `https://toolshop-server.herokuapp.com/review`;
+        const url = `https://toolshop-server.onrender.com/review`;
         fetch(url, {
             method: 'POST',
             headers: {

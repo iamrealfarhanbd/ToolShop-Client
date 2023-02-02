@@ -16,7 +16,7 @@ const MyProfile = () => {
     let from = useLocation.state?.from?.pathname || "/";
     const email = user?.email;
 
-    const { data: userones, isLoading, refetch } = useQuery('userones', () => fetch(`https://toolshop-server.herokuapp.com/user?email=${email}`, {
+    const { data: userones, isLoading, refetch } = useQuery('userones', () => fetch(`https://toolshop-server.onrender.com/user?email=${email}`, {
         method: 'GET',
         headers:{
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -28,7 +28,7 @@ const MyProfile = () => {
     
     const onSubmit = data => {
         console.log(data);
-        const url = `https://toolshop-server.herokuapp.com/user/${email}`;
+        const url = `https://toolshop-server.onrender.com/user/${email}`;
         fetch(url, {
             method: 'PUT',
             headers: {

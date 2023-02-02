@@ -6,7 +6,7 @@ import UserRow from './UserRow';
 const Users = () => {
 
 
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://toolshop-server.herokuapp.com/users', {
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://toolshop-server.onrender.com/users', {
         method: 'GET',
         headers:{
             authorization: `Bearer ${localStorage.getItem('accessToken')}`

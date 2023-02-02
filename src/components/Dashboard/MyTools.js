@@ -12,7 +12,7 @@ const MyTools = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`https://toolshop-server.herokuapp.com/order?email=${user.email}`, {
+            fetch(`https://toolshop-server.onrender.com/order?email=${user.email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`

@@ -10,7 +10,7 @@ const stripePromise = loadStripe('pk_test_51JdyxQKFiz57BFQf4YqchniMjoXzuhl7BhFRp
 
 const Payment = () => {
     const { id } = useParams();
-    const url = `https://toolshop-server.herokuapp.com/order/${id}`;
+    const url = `https://toolshop-server.onrender.com/order/${id}`;
 
     const { data: order, isLoading } = useQuery(['order', id], () => fetch(url, {
 

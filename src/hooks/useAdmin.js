@@ -6,7 +6,7 @@ const useAdmin = user => {
     useEffect( () =>{
         const email = user?.email;
         if(email){
-            fetch(`https://toolshop-server.herokuapp.com/admin/${email}`, {
+            fetch(`https://toolshop-server.onrender.com/admin/${email}`, {
                 method:'GET',
                 headers: {
                     'content-type': 'application/json',

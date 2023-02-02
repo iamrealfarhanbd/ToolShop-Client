@@ -27,7 +27,7 @@ const Order = () => {
     };
 
     useEffect(() => {
-        const url = `https://toolshop-server.herokuapp.com/tool/${orderID}`;
+        const url = `https://toolshop-server.onrender.com/tool/${orderID}`;
         console.log(url);
         fetch(url)
             .then(res => res.json())
@@ -58,7 +58,7 @@ const Order = () => {
             return setQuantityError(`We Cant Provide more then ${orderItem.quantity} quantity`)
         }
         setQuantityError('');
-        fetch('https://toolshop-server.herokuapp.com/order', {
+        fetch('https://toolshop-server.onrender.com/order', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

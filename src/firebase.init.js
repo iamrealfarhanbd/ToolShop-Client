@@ -7,14 +7,15 @@ import { getAuth } from 'firebase/auth';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey:process.env.REACT_APP_apiKey,
-  authDomain:process.env.REACT_APP_authDomain,
-  projectId:process.env.REACT_APP_projectId,
-  storageBucket:process.env.REACT_APP_storageBucket,
-  messagingSenderId:process.env.REACT_APP_messagingSenderId,
-  appId:process.env.REACT_APP_appId,
-  measurementId:process.env.REACT_APP_measurementId,
+  apiKey: "AIzaSyAYi66zKLQtlzZmqvTSeAdYgLMgvi7_LOg",
+  authDomain: "toolshop-56a24.firebaseapp.com",
+  projectId: "toolshop-56a24",
+  storageBucket: "toolshop-56a24.appspot.com",
+  messagingSenderId: "297426747490",
+  appId: "1:297426747490:web:d627fd78e1a7e41287513b"
 };
+console.log(process.env.apiKey)
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);

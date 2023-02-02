@@ -4,7 +4,7 @@ const useToolDetails = toolId =>{
     const [tool, setTool] = useState({});
 
     useEffect( () =>{
-        const url = `https://toolshop-server.herokuapp.com/tool/${toolId}`;
+        const url = `https://toolshop-server.onrender.com/tool/${toolId}`;
         console.log(url);
         fetch(url)
         .then(res=> res.json())

@@ -14,7 +14,7 @@ const AddTools = () => {
 
     const onSubmit = data => {
         console.log(data);
-        const url = `https://toolshop-server.herokuapp.com/tools`;
+        const url = `https://toolshop-server.onrender.com/tools`;
         fetch(url, {
             method: 'POST',
             headers: {

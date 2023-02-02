@@ -4,7 +4,7 @@ const useAllTools = () =>{
     const [tools, setTools] = useState([]);
 
     useEffect( ()=>{
-        fetch('https://toolshop-server.herokuapp.com/tool')
+        fetch('https://toolshop-server.onrender.com/tool')
         .then(res => res.json())
         .then(data => setTools(data));
     }, []);

@@ -23,7 +23,7 @@ const MyOrder = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://toolshop-server.herokuapp.com/order/${id}`, {
+                fetch(`https://toolshop-server.onrender.com/order/${id}`, {
                     method: 'DELETE',
                     headers: {
                         authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -46,7 +46,7 @@ const MyOrder = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`https://toolshop-server.herokuapp.com/order?useremail=${user.email}`, {
+            fetch(`https://toolshop-server.onrender.com/order?useremail=${user.email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`

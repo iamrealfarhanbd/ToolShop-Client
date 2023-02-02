@@ -15,7 +15,7 @@ const ManageTools = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://toolshop-server.herokuapp.com/tool/${id}`, {
+                fetch(`https://toolshop-server.onrender.com/tool/${id}`, {
                     method: 'DELETE',
                     headers: {
                         authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -37,7 +37,7 @@ const ManageTools = () => {
     }
 
     useEffect(()=>{
-        fetch('https://toolshop-server.herokuapp.com/tool')
+        fetch('https://toolshop-server.onrender.com/tool')
         .then(res=> res.json())
         .then(tool=>setTools(tool))
     },[tools])

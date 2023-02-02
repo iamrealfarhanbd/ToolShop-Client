@@ -7,7 +7,7 @@ const AllOrders = () => {
     const [orders , setOrders] = useState([])
 
     const handleOrder = (id) => {
-        fetch(`https://toolshop-server.herokuapp.com/order/${id}`, {
+        fetch(`https://toolshop-server.onrender.com/order/${id}`, {
             method: 'PATCH',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -39,7 +39,7 @@ const AllOrders = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://toolshop-server.herokuapp.com/order/${id}`, {
+                fetch(`https://toolshop-server.onrender.com/order/${id}`, {
                     method: 'DELETE',
                     headers: {
                         authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -61,7 +61,7 @@ const AllOrders = () => {
     }
 
     useEffect(()=>{
-        fetch('https://toolshop-server.herokuapp.com/orders')
+        fetch('https://toolshop-server.onrender.com/orders')
         .then(res=> res.json())
         .then(order=>setOrders(order))
     },[orders])
