@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import myimg from '../../assets/images/Farhan.jpg';
 const Portfolio = () => {
     return (
@@ -36,13 +36,13 @@ const Portfolio = () => {
                    
                     <p className="text-3xl font-bold my-5" >My Project:
                         <ul className=' grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 p-4'>
-                            <li className='btn bg-sky-600 text-sky-100'><Link to={{ pathname: "https://www.apexlearning.org.uk/" }}>apexlearning</Link></li>
-                            <li className='btn bg-sky-600 text-sky-100'><Link to={{ pathname: "https://www.idesignacademy.net/"}}> idesignacademy</Link></li>
-                            <li className='btn bg-sky-600 text-sky-100'><Link to={{ pathname: "https://www.photographyacademy.net/"}}>photographyacademy </Link></li>
-                            <li className='btn bg-sky-600 text-sky-100'><Link to={{ pathname: "https://www.ipublicspeaking.net/"}}> ipublicspeaking</Link></li>
-                            <li className='btn bg-sky-600 text-sky-100'><Link to={{ pathname: "https://www.theyogatraining.net"}}>theyogatraining </Link></li>
-                            <li className='btn bg-sky-600 text-sky-100'><Link to={{ pathname: "https://www.theyogatraining.net/"}}>theyogatraining</Link> </li>
-                            <li className='btn bg-sky-600 text-sky-100'><Link to={{ pathname: "https://thecareerpath.net/"}}>thecareerpath</Link></li>
+                            <li className='btn bg-sky-600 text-sky-100'><Link to={{ pathname:"https://www.apexlearning.org.uk" }}>apexlearning</Link></li>
+                            <li className='btn bg-sky-600 text-sky-100'><Link to={{ pathname:"https://www.idesignacademy.net"}}> idesignacademy</Link></li>
+                            <li className='btn bg-sky-600 text-sky-100'><Link to={{ pathname:"https://www.photographyacademy.net"}}>photographyacademy </Link></li>
+                            <li className='btn bg-sky-600 text-sky-100'><Link to={{ pathname:"https://www.ipublicspeaking.net"}}> ipublicspeaking</Link></li>
+                            <li className='btn bg-sky-600 text-sky-100'><Link to={{ pathname:"https://www.theyogatraining.net"}}>theyogatraining </Link></li>
+                            <li className='btn bg-sky-600 text-sky-100'><Link to={{ pathname:"https://www.theyogatraining.net"}}>theyogatraining</Link> </li>
+                            <li className='btn bg-sky-600 text-sky-100'><Link to={{ pathname:"https://thecareerpath.net/"}}>thecareerpath</Link></li>
                         </ul>
                     </p>
                 </div>
