@@ -6,21 +6,30 @@ const useAdmin = user => {
     useEffect( () =>{
         const email = user?.email;
         if(email){
-            fetch(`https://toolshop-server.onrender.com/admin/${email}`, {
-                method:'GET',
-                headers: {
-                    'content-type': 'application/json',
-                    authorization: `Bearer ${localStorage.getItem('accessToken')}`
-                }
-            })
-            .then(res=>res.json())
-            .then(data => {
-                setAdmin(data.admin);
-                setAdminLoading(false);
-            })
+            fetchData();
         }
     }, [user])
-
+    const fetchData = async () => {
+        try {
+          const res = await fetch(`https://toolshop-server.onrender.com/tool`, {
+            method: "GET",
+            headers: {
+                'content-type': 'application/json',
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
+            },
+          });
+          const result = await res.json();
+          if (!result.error) {
+            setAdmin(result);
+            setAdminLoading(false);
+         
+          } else {
+            console.log(result);
+          }
+        } catch (err) {
+          console.log(err);
+        }
+      };
     return [admin, adminLoading]
 }
 

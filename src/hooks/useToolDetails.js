@@ -4,13 +4,28 @@ const useToolDetails = toolId =>{
     const [tool, setTool] = useState({});
 
     useEffect( () =>{
-        const url = `https://toolshop-server.onrender.com/tool/${toolId}`;
-        console.log(url);
-        fetch(url)
-        .then(res=> res.json())
-        .then(data => setTool(data));
-
+        fetchData();
     }, [toolId]);
+
+    const fetchData = async () => {
+        try {
+          const res = await fetch(`https://toolshop-server.onrender.com/tool/${toolId}`, {
+            method: "GET",
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          });
+          const result = await res.json();
+          if (!result.error) {
+            setTool(result);
+         
+          } else {
+            console.log(result);
+          }
+        } catch (err) {
+          console.log(err);
+        }
+      };
     return [tool]
 }
 
