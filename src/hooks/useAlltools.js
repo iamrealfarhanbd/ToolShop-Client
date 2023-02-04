@@ -5,16 +5,22 @@ const useAllTools = () =>{
 
     useEffect( ()=>{
         fetchData();
+    
     }, []);
 
 
     const fetchData = async () => {
         try {
-          const res = await fetch(`https://toolshop-server.onrender.com/tool`);
+          const res = await fetch(`https://toolshop-server.onrender.com/tool`, {
+            method: "GET",
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          });
           const result = await res.json();
           if (!result.error) {
             setTools(result);
-         console.log(tools);
+         
           } else {
             console.log(result);
           }
